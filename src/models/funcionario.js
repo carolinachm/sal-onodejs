@@ -10,12 +10,12 @@ const schema = new Schema({
     },
     nome: {
         type: String,
-        required: [true,'O nome é obrigatorio'],
+        required: [true, 'O nome é obrigatorio'],
         trim: true
     },
     email: {
         type: String,
-        required: [true,'O e-mail é obrigatorio'],
+        required: [true, 'O e-mail é obrigatorio'],
         trim: true
     },
     dataNascimento: {
@@ -52,9 +52,16 @@ const schema = new Schema({
     },
     celular: {
         type: String,
-        required: [true,'O telefone é obrigatorio'],
+        required: [true, 'O telefone é obrigatorio'],
         trim: true
+    },
+    funcionario: {
+        nome:String,
+        tipofuncionario: [{ type: Schema.Types.ObjectId, ref: 'TipoFuncionario' }]
     }
-      
+
 });
 module.exports = mongoose.model('Funcionario', schema);
+
+
+

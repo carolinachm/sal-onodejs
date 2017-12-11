@@ -1,6 +1,8 @@
 const app = require('../src/app');
 const debug = require('debug')('sal-aonodejs:server');
 const http = require('http');
+const config = require('config');// aqui estaremos carregando a localização da base de dados através dos arquivos JSON.
+ 
 
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
