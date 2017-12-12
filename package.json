@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "devstart": "nodemon ./bin/server.js --exec babel-node",
-    "start": "node ./bin/server.js"
+    "start": "node ./bin/server.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
