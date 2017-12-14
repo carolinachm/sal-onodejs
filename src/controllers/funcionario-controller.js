@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const Funcionario = mongoose.model('Funcionario');
 const repository = require('../repositories/funcionario-repository');
+const guid = require('guid');
 
 exports.get = async(req, res, next) => {
     try {
@@ -31,7 +32,10 @@ exports.post = async(req, res, next) => {
  
     try {
         
-        await repository.create(req.body);
+        await repository.create({
+             tipofuncionario: req.body.tipofuncionario,
+             number: guid.raw().substring(0,6)
+            });
             res.status(201).send({
             message: 'Funcionario cadastrado com sucesso!'
         });

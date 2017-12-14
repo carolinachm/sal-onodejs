@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const Funcionario = mongoose.model('Funcionario');
 
 exports.get = async() => {
-    const res = await Funcionario.find({});
+    const res = await Funcionario
+    .find({})
+    .populate('tipofuncionario');
     return res;
 }
 

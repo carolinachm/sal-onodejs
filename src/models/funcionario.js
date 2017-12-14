@@ -4,10 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    tipofuncionario: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'TipoFuncionario'
-    },
+  
     nome: {
         type: String,
         required: [true, 'O nome é obrigatorio'],
@@ -52,11 +49,9 @@ const schema = new Schema({
     },
     celular: {
         type: String,
-        required: [true, 'O telefone é obrigatorio'],
         trim: true
     },
     funcionario: {
-        nome:String,
         tipofuncionario: [{ type: Schema.Types.ObjectId, ref: 'TipoFuncionario' }]
     }
 
