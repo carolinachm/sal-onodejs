@@ -13,8 +13,19 @@ chai.use(chaihttp);
 
 describe('Cliente', function() {
   it('Buscar Cliente', async function() {
-    const clientes = await repository.find({});
+    const clientes = await repository.find({nome:'Jão'});
     clientes.should.have.length(3);
   });
+  it('buscar por Cliente id', async () => {
+    const cliente = await repository.findById({id: 1 });
+    
+  });
+   it('Novo cliente', async () => {
+    const cliente = await repository.create({nome: 'Jao' });
+    
+  });
+  it('Atualiza Client', async() =>{
+    
+  })
 });
 

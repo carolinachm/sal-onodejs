@@ -17,6 +17,7 @@ const Funcionario = require('./models/funcionario');
 const FormaPagamento = require('./models/formapagamento');
 const  Servico = require('./models/servico');
 const Compra = require('./models/compra');
+const VendaProduto = require('./models/vendaproduto');
 
 //carregar as rotas
 const indexRoute = require('./routes/index-route');
@@ -27,6 +28,7 @@ const funcionarioRoute = require('./routes/funcionario-route');
 const formapagamentoRoute = require('./routes/formapagamento-route');
 const servicoRoute = require('./routes/servico-route');
 const compraRoute = require('./routes/compra-route');
+const vendaprodutoRoute = require('./routes/vendaproduto-route');
 
 
 app.use(bodyParser.json());
@@ -41,6 +43,7 @@ app.use('/funcionarios', funcionarioRoute);
 app.use('/formapagamentos', formapagamentoRoute);
 app.use('/servicos', servicoRoute);
 app.use('/compras', compraRoute);
+app.use('/vendaprodutos', vendaprodutoRoute);
 
 
 
